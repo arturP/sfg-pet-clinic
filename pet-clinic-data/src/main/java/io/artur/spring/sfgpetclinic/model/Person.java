@@ -3,7 +3,7 @@ package io.artur.spring.sfgpetclinic.model;
 /**
  *
  */
-public class Person {
+public class Person extends BaseEntity {
 
     private String firstName;
 
