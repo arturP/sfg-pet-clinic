@@ -1,10 +1,10 @@
-package io.artur.spring.sftpetclinic;
+package io.artur.spring.sfgpetclinic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SftPetClinicApplicationTests {
+class SfgPetClinicApplicationTests {
 
 	@Test
 	void contextLoads() {
