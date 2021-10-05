@@ -1,16 +1,15 @@
 package io.artur.spring.sfgpetclinic.services.map;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import io.artur.spring.sfgpetclinic.model.BaseEntity;
+
+import java.util.*;
 
 /**
  *
  */
-public abstract class AbstractMapService<T, ID> {
+public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
 
-    protected Map<ID, T> storage = new HashMap<>();
+    protected Map<Long, T> storage = new HashMap<>();
 
     Set<T> findAll() {
         return new HashSet<>(storage.values());
@@ -20,8 +19,13 @@ public abstract class AbstractMapService<T, ID> {
         return storage.get(id);
     }
 
-    T save(ID id, T object) {
-        storage.put(id, object);
+    T save(T object) {
+        if (object != null) {
+            if (object.getId() == null) {
+                object.setId(getNextId());
+            }
+            storage.put(object.getId(), object);
+        }
         return object;
     }
 
@@ -31,5 +35,13 @@ public abstract class AbstractMapService<T, ID> {
 
     void delete(T object) {
         storage.entrySet().removeIf(entry -> entry.getValue().equals(object));
+    }
+
+    private Long getNextId() {
+        if (this.storage.isEmpty()) {
+            return 1L;
+        } else {
+            return Collections.max(this.storage.keySet()) + 1L;
+        }
     }
 }
