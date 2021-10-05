@@ -4,8 +4,6 @@ import io.artur.spring.sfgpetclinic.model.Owner;
 import io.artur.spring.sfgpetclinic.model.Vet;
 import io.artur.spring.sfgpetclinic.services.OwnerService;
 import io.artur.spring.sfgpetclinic.services.VetService;
-import io.artur.spring.sfgpetclinic.services.map.OwnerServiceMap;
-import io.artur.spring.sfgpetclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
