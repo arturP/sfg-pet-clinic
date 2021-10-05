@@ -1,14 +1,14 @@
 package io.artur.spring.sfgpetclinic.services.map;
 
 import io.artur.spring.sfgpetclinic.model.Pet;
-import io.artur.spring.sfgpetclinic.services.CrudService;
+import io.artur.spring.sfgpetclinic.services.PetService;
 
 import java.util.Set;
 
 /**
  *
  */
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Pet findById(Long id) {
         return super.findById(id);
