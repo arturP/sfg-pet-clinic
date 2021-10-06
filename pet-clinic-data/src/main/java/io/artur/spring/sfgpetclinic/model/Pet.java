@@ -9,6 +9,7 @@ public class Pet extends BaseEntity{
     private LocalDate birthDate;
     private PetType type;
     private Owner owner;
+    private String name;
 
     public LocalDate getBirthDate() {
         return birthDate;
@@ -32,5 +33,13 @@ public class Pet extends BaseEntity{
 
     public void setOwner(Owner owner) {
         this.owner = owner;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
