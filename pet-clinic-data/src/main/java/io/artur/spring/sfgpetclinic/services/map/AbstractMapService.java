@@ -1,6 +1,7 @@
 package io.artur.spring.sfgpetclinic.services.map;
 
 import io.artur.spring.sfgpetclinic.model.BaseEntity;
+import io.artur.spring.sfgpetclinic.model.Owner;
 
 import java.util.*;
 
